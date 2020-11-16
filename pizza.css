@@ -1,0 +1,100 @@
+
+body {
+    background-image: url('./img/pizza.jpg');
+    background-size: cover;
+    padding: 2% 0;
+    font-family: Georgia, Times, Times New Roman, serif;
+}
+
+#wrapper {
+    width: 1024px;
+    margin: 0 auto;
+    background-color: rgba(255,255,255,.5);
+}
+
+#step2img{
+    float: right;
+    margin-top: 100px;
+}
+.section {
+    background-color: #ffffff;
+    padding: 25px 5%;
+    margin: 25px;
+    width: 95%;
+    box-shadow: 5px 10px 10px #000;
+}
+
+h1, h2{
+    width: 1024px;
+    margin: 0 auto;
+    font-family: Georgia, Times, Times New Roman, serif;
+    font-weight: bold;
+    background-color: #fff;
+    background-size: auto;
+    background-repeat: no-repeat;
+    text-align: center;
+
+}
+
+figure {
+    display: block;
+    position: center;
+    font-family: Arial, Helvetica, sans-serif;;
+    font-weight: bold;
+    color: darkorange;
+}
+
+#subtotal{
+    position: absolute;
+    left:40%;
+    bottom: 25px;
+}
+
+#design-pizza {
+    position: relative;
+}
+#design-pizza form {
+    float: left;
+    width: 50%;
+}
+
+#design-pizza label {
+    display: block;
+}
+
+#design-pizza input {
+    margin: 0 10px;
+}
+
+#customer-info input {
+    display: block;
+}
+.section .next {
+    margin-top: 50px;
+    float: right;
+}
+
+.section .back {
+    margin-top: 50px;
+    float: left;
+}
+
+#address-output span {
+    display: block;
+    padding-left: 20px;
+}
+
+#cost-breakdown {
+    text-align: right;
+}
+.hide {
+    display: none;
+}
+
+.clear {
+    clear: both;
+}
+
+#FName, #LName, #address, #phone, #city, #state, #zip {
+    margin: 7px;
+}

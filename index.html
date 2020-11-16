@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizza World</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="pizza.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("img").click(function(){
+                // Change src attribute of image
+                $(this).attr("src", ".jpg");
+            });
+        });
+        </script>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Pizza World</h1>
+        <h2>Let's order your own pizza</h2>
+
+
+        <div class="section" id="design-pizza">
+            <h3>STEP 1: Choose pizza details</h3>
+
+            <form id="size">
+
+                <h4>Size</h4>
+                <label for="small">
+                    <input type="radio" id="small" name="size" value="small">Small ($7)
+                </label>
+                <label for="medium">
+                    <input type="radio" id="medium" name="size" value="medium">Medium ($9)
+                </label>
+                <label for="large">
+                    <input type="radio" id="large" name="size" value="large">Large ($12)
+                </label>
+
+            </form>
+
+            <form id="crust">
+                <h4>Crust</h4>
+                <label for="thin">
+                    <input type="radio" id="thin" name="crusts" value="thin">Thin
+                </label>
+                <label for="pan">
+                    <input type="radio" id="pan" name="crusts" value="pan">Pan
+                </label>
+                <label for="glutenfree">
+                    <input type="radio" id="glutenfree" name="crusts" value="glutenfree">Gluten free
+                </label>
+            </form>
+
+
+            <form id="meat">
+                <h4>Meats($1.50 each)</h4>
+                <label for="beef">
+                    <input type="checkbox" id="beef" name="meats" value="beef">Beef
+                </label>
+                <label for="pork">
+                    <input type="checkbox" id="pork" name="meats" value="pork">Pork
+                </label>
+                <label for="chicken">
+                    <input type="checkbox" id="chicken" name="meats" value="chicken">Chicken
+                </label>
+            </form>
+
+
+            <form id="vegetables">
+                <h4>Veggies($1.00 each)</h4>
+                <label for="onion">
+                    <input type="checkbox" id="onion" name="veggies" value="onion">Onion
+                </label>
+                <label for="pepper">
+                    <input type="checkbox" id="pepper" name="veggies" value="pepper">Pepper
+                </label>
+                <label for="mushroom">
+                    <input type="checkbox" id="mushroom" name="veggies" value="mushroom">Mushroom
+                </label>
+            </form>
+            <div id="subtotal"></div>
+
+            <button class="next">Next</button>
+            <div class="clear"></div>
+
+        </div>
+
+
+
+
+
+
+        <div class="section hide" id="customer-info">
+            <h3>STEP 2: Enter delivery information</h3>
+            <img id="step2img" src="./img/delivery.JPG" alt="delivery" width="500" height="300">
+            <form>
+                <label for="FName">*First Name</label>
+                <input type="text" id="FName" name="FName" required>
+
+                <label for="LName">*Last Name</label>
+                <input type="text" id="LName" name="LName" required>
+
+                <label for="address">*Address</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="city">*City</label>
+                <input type="text" id="city" name="city" required>
+
+                <label for="state">*State</label>
+                <input type="text" id="state" name="state" required>
+
+                <label for="zip">*Zip</label>
+                <input type="text" id="zip" maxlength="5" name="zip" required>
+
+                <label for="phone">Phone</label>
+                <input type="tel" maxlength="12" id="phone" name="phone">
+
+            </form> <br><br>
+            <button class="back">Back</button>
+            <button class="next">Next</button>
+            <div class="clear"></div>
+        </div>
+
+
+
+
+
+        <div class="section hide" id="order-confirmation">
+            <h3>STEP 3: Order confirmation</h3>
+                <figure>
+                    <img src="./img/pizzaoven.png" alt="ovenpizza" width="400" height="300">
+                    <figcaption>We will make your delicious pizza soon! Enjoy!</figcaption>
+                </figure>
+
+            <div id="pizza">
+                <p>Pizza Size: <span id="pizza-size"></span></p>
+                <p>Pizza Crust: <span id="pizza-crust"></span></p>
+                <p>Meats</p>
+                <ul id="pizza-meats"></ul>
+                <p>Vegetables</p>
+                <ul id="pizza-vegetables"></ul>
+            </div>
+
+            <div id="delivery">
+                <p>Name: <span id="delivery-name"></span></p>
+                <p id="address-output">Address
+                    <span id="delivery-address"></span>
+                    <span id="delivery-city"></span>
+                    <span id="delivery-state"></span>
+                    <span id="delivery-zip"></span>
+
+                </p>
+                <p>Phone: <span id="delivery-phone"></span></p>
+            </div>
+            <div id="cost-breakdown">
+
+                <p>Subtotal: $<span id="subtotal-price"></span></p>
+                <p>Tax (5.1%): $<span id="tax"></span></p>
+                <p>Delivery Fee: $2</p>
+                <p>Total Cost: $<span id="total-price"></span></p>
+            </div>
+
+            <button class="back">Back</button>
+
+            <button class="next">Confirm</button>
+            <div class="clear"></div>
+
+        </div>
+
+
+
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="main.js"></script>
+
+</html>
